@@ -9,6 +9,21 @@ h1 {
 	font-family: 'Quicksand', sans-serif;
 }
 
+.contactNav {
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+}
+.topTele {
+	float: left;
+	text-align: center;
+	display: inline;
+}
+
+.topEmail {
+	float: right;
+	text-align: center;
+	display: inline;
+}
 .navigation {
 	text-align: center;
 	margin-bottom: 50px;
