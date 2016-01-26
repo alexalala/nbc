@@ -16,13 +16,12 @@ h1 {
 .topTele {
 	float: left;
 	text-align: center;
-	display: inline;
 }
 
 .topEmail {
 	float: right;
-	text-align: center;
-	display: inline;
+	text-align: right;
+
 }
 .navigation {
 	text-align: center;
@@ -123,6 +122,12 @@ img {
 	float: right;
 }
 
+.news {
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
 .blogIntro {
 	color: #317A96;
 	text-align: center;
