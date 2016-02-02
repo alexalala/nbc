@@ -4,6 +4,7 @@
     <title>Norfolk Broads Charter</title>
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link href="index.css" rel="stylesheet">
   </head>
   <body>
@@ -14,7 +15,7 @@
 
     <div class = "navigation">
       <ul>
-        <li class = "index.html"> Home </li>
+        <li><a href ="index.html"> Home </a></li>
         <li><a href = "nbcabout.html"> About </a></li>
         <li><a href = "nbcblog.html"> Blog </a></li>
         <li class = "active"> Contact </li>
@@ -26,20 +27,29 @@
     
     <hr>
     
-    <div class = "inputWrapper">
-      <label> Name </label>
-      <input type = "text" name = "contactName">
-    </div>
- 
-    <div class = "inputWrapper">
-      <label> Email </label>
-      <input type = "text" name = "contactEmail">
-    </div>
+    <h5 class = "news"> Get In Touch </h5>
+      <h5 class = "intro"> 
+        We are here to answer any questions you may have about Norfolk Broads Charter. 
+        <br><br>
+        Reach out to us and we'll respond as soon as we can.
+      </h5>
+      
+      <div class = "wrapper">
+        <label><b> Name </b></label>
+        <input type = "text" name = "contactName">
+      </div>
+  
+      <div class = "inputWrapper">
+        <label><b> Email </b></label>
+        <input type = "text" name = "contactEmail">
+      </div>
+      
+      <div class = "inputWrapper">
+        <label><b> Message </b></label>
+        <textarea rows = "6" name = "contactBody"></textarea>
+      </div>
     
-    <div class = "inputWrapper">
-      <label> Message </label>
-      <textarea rows = "6" name = "contactBody"></textarea>
-    </div>
+      <button type = "button"><b>Submit</b></button>
        
     <footer>
         <p> © Norfolk Broads Charter</p>
