@@ -1,59 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
   <head>
     <title>Norfolk Broads Charter</title>
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link href="index.css" rel="stylesheet">
+    <script src="node_modules/angular/angular.js" type="text/javascript"></script>
   </head>
   <body>
 
     <!--header-->
 
     <h1>Norfolk Broads Charter</h1>
-
-    <div class = "navigation">
+    <div class="navigation">
       <ul>
-        <li><a href ="index.html"> Home </a></li>
-        <li><a href = "nbcabout.html"> About </a></li>
-        <li><a href = "nbcblog.html"> Blog </a></li>
-        <li class = "active"> Contact </li>
-        <li> Book Now </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nbcabout.html">About</a></li>
+        <li><a href="nbcblog.html">Blog</a></li>
+        <li class="activeNav">Contact</li>
+        <li>Book Now</li>
       </ul>
     </div>
 
     <!--content-->
     
     <hr>
-    
-    <h5 class = "news"> Get In Touch </h5>
-      <h5 class = "intro"> 
+    <section ng-controller="order" class="central">
+      <h2>Get In Touch</h2>
+      <p class="pBlue"> 
         We are here to answer any questions you may have about Norfolk Broads Charter. 
-        <br><br>
+      </p>
+      <p class="pBlue">
         Reach out to us and we'll respond as soon as we can.
-      </h5>
-      
-      <div class = "wrapper">
-        <label><b> Name </b></label>
-        <input type = "text" name = "contactName">
-      </div>
-  
-      <div class = "inputWrapper">
-        <label><b> Email </b></label>
-        <input type = "text" name = "contactEmail">
-      </div>
-      
-      <div class = "inputWrapper">
-        <label><b> Message </b></label>
-        <textarea rows = "6" name = "contactBody"></textarea>
-      </div>
-    
-      <button type = "button"><b>Submit</b></button>
-       
-    <footer>
-        <p> © Norfolk Broads Charter</p>
-    </footer>
+      </p>
+      <form name="form">
+        <label>
+          <b>Name</b>
+          <!--check if anything is in name input field-->
+          <div ng-messages="form.name.$error" ng-if="isRequired(name)">
+            <div ng-message="required" class="err">
+              Please enter your name
+            </div>
+          </div>
+          <input type="text" name="name" ng-model="order.name" required />
+        </label>
+        <label>
+          <b>Email Address</b>
+          <!--check if anything is in email input field-->
+          <div ng-messages="form.email.$error" role="alert" ng-if="form.email.$touched && form.email.$pristine || form.email.$dirty && form.email.$invalid">
+            <div ng-message="required" class="err">
+              Please enter your email address
+            </div>
+          </div>
+          <input type="email" name="email" ng-model="order.email" required />
+        </label>
+        <label>
+          <b>Message</b>
+          <!--check if anything is in message input field-->
+          <div ng-messages="form.message.$error" role="alert" ng-if="form.message.$touched && form.message.$pristine || form.message.$dirty && form.message.$invalid">
+            <div ng-message="required" class="err">
+              Please enter your message
+            </div>
+          </div>
+          <textarea rows="6" name="message" ng-model="order.message" required /></textarea>
+        </label>
+        <p name="ifInvalid" ng-show="valid" class="ng-hide" id="ifInvalid">I'm sorry, one of the boxes is filled in incorrectly, please amend and submit again.</p>
+        <label>
+          <button type="button" name="submit" ng-click="submit()">
+            <b>Submit</b>
+          </button>
+        </label>
+      </form>
+    </section>
 
+    <!--footer-->
+    
+    <footer>
+      © Norfolk Broads Charter
+    </footer>
+    <script src="node_modules/angular-messages/angular-messages.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
   </body>
 </html>

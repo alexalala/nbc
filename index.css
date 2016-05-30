@@ -1,3 +1,4 @@
+/* ALL */
 body {
 	background-color: #77B7D0;
 }
@@ -9,13 +10,22 @@ h1 {
 	font-family: 'Poiret One', cursive;
 }
 
-p {
+h2 {
+	color: white;
+	font-family: 'Poiret One', cursive;
+	font-size: 30px;
+	text-align: center;
+}
+
+footer {
 	color: #317A96;
 	font-size: 10px;
 	text-align: center;
 	font-family: 'Poiret One', cursive;
 	font-weight: bold;
-	
+	position:relative;
+	bottom: 0px;
+	width: 100%;	
 }
 
 textarea {
@@ -59,6 +69,15 @@ label {
 	padding: 0 30px;																
 }
 
+.activeNav {
+	font-weight: bolder;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
 a:hover {
 	color: #317A96;
 }
@@ -69,35 +88,19 @@ a:hover {
     height: 68%;
 }
 
-h2 { 
-   position: absolute;  
-   bottom:20%;
-   left: 25%; 
-   width: 50%; 
-   color: white;
-   font-size: 60px;
-   font-family: 'Libre Baskerville', serif;
-   text-align: center;
-}
-
-.indexText {
-	clear: left;
-	text-align: center;
-}
-.active {
-	font-weight: bolder;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-}
-
-h4 {
+p {
 	color: white;
 	font-size: 19px;
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
+}
+
+.pBlue {
+	color: #317A96;
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .central {
@@ -105,7 +108,7 @@ h4 {
 	margin: 0 auto;
 }
 
-.container {
+.blogImg{
 	width: 40%;
     height: 200px;
     margin: auto;
@@ -120,34 +123,7 @@ img {
     margin-right: auto;
 }
 
-.one {
-	width: 40%;
-    height: 100%;
-    float: left;
-    margin-left: 5%;
-}
-
-.two {
-	margin-left: 5%;
-	height: 100%;
-	width: 40%;
-	float: right;
-}
-
-.news {
-	color: white;
-	font-family: 'Poiret One', cursive;
-	font-size: 30px;
-	text-align: center;
-}
-.intro {
-	color: #317A96;
-	text-align: center;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 20px;
-}
-
-.blogTitle {
+h3 {
 	color: white;
 	text-align: center;
 	font-family: 'Quicksand', sans-serif;
@@ -160,13 +136,6 @@ img {
 	text-align: right;
 	color:  #e9e9e9;
 
-}
-
-.blogContent {
-	color: white;
-	text-align: center;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 20px;
 }
 
 button {
@@ -257,4 +226,12 @@ figure:hover+span {
 	height: 450px;
 	width: 600px;
 	margin: 0 auto;
+}
+
+.err {
+	color: red;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	font-size: 15px;
+	margin:0;
 }
