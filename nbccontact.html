@@ -6,7 +6,6 @@
     <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link href="index.css" rel="stylesheet">
-    <script src="node_modules/angular/angular.js" type="text/javascript"></script>
   </head>
   <body>
 
@@ -34,43 +33,45 @@
       <p class="pBlue">
         Reach out to us and we'll respond as soon as we can.
       </p>
+      
       <form name="form">
+
         <label>
           <b>Name</b>
           <!--check if anything is in name input field-->
-          <div ng-messages="form.name.$error" ng-if="isRequired(name)">
-            <div ng-message="required" class="err">
+            <div class="err">
               Please enter your name
             </div>
-          </div>
-          <input type="text" name="name" ng-model="order.name" required />
+          <input type="text">
         </label>
+
         <label>
           <b>Email Address</b>
           <!--check if anything is in email input field-->
-          <div ng-messages="form.email.$error" role="alert" ng-if="form.email.$touched && form.email.$pristine || form.email.$dirty && form.email.$invalid">
-            <div ng-message="required" class="err">
+            <div class="err">
               Please enter your email address
             </div>
-          </div>
-          <input type="email" name="email" ng-model="order.email" required />
+          <input type="email">
         </label>
+
         <label>
           <b>Message</b>
           <!--check if anything is in message input field-->
-          <div ng-messages="form.message.$error" role="alert" ng-if="form.message.$touched && form.message.$pristine || form.message.$dirty && form.message.$invalid">
-            <div ng-message="required" class="err">
+            <div class="err">
               Please enter your message
             </div>
           </div>
-          <textarea rows="6" name="message" ng-model="order.message" required /></textarea>
+          <textarea rows="6"></textarea>
         </label>
-        <p name="ifInvalid" ng-show="valid" class="ng-hide" id="ifInvalid">I'm sorry, one of the boxes is filled in incorrectly, please amend and submit again.</p>
+
+        <p class="errormsg">I'm sorry, one of the boxes is filled in incorrectly, please amend and submit again.</p>
+
         <label>
-          <button type="button" name="submit" ng-click="submit()">
+          <button type="button" id="submit">
             <b>Submit</b>
           </button>
         </label>
+
       </form>
     </section>
 
@@ -79,7 +80,7 @@
     <footer>
       © Norfolk Broads Charter
     </footer>
-    <script src="node_modules/angular-messages/angular-messages.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/app.js" type="text/javascript"></script>
   </body>
 </html>
