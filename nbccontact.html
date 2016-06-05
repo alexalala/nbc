@@ -38,30 +38,27 @@
 
         <label>
           <b>Name</b>
-          <!--check if anything is in name input field-->
-            <div class="err">
+            <div class="err" id="nameErr">
               Please enter your name
             </div>
-          <input type="text">
+          <input type="text" id="name" required>
         </label>
 
         <label>
           <b>Email Address</b>
-          <!--check if anything is in email input field-->
-            <div class="err">
-              Please enter your email address
+            <div class="err" id="emailErr">
+              Please enter a valid email address
             </div>
-          <input type="email">
+          <input type="email" id="email" required>
         </label>
 
         <label>
           <b>Message</b>
-          <!--check if anything is in message input field-->
-            <div class="err">
+            <div class="err" id="messageErr">
               Please enter your message
             </div>
           </div>
-          <textarea rows="6"></textarea>
+          <textarea rows="6" id="message" required></textarea>
         </label>
 
         <p class="errormsg">I'm sorry, one of the boxes is filled in incorrectly, please amend and submit again.</p>
