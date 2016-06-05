@@ -4,12 +4,6 @@ var order = {
 		message: null
 	};
 
-var valid = {
-	 	name: false,
-	 	email: false,
-	 	message: false
-	};
-
 function isRequired(el) {
 	if ($('#' + el).prop('required')) {
 		return true;
@@ -26,13 +20,15 @@ function isEmpty(el) {
 	};
 };
 
-
-function isFormValid(el) {
-	if (isRequired(el)) {
-		if(!isEmpty(el)){
-			valid[el] = true;
+function isFormValid(obj) {
+		if (isRequired(obj)) {
+			if(!isEmpty(obj)){
+				return true;
+			};
+		} else {
+			return true;
 		};
-	};
+		return false;
 };
 
 function errorMsg(el) {
@@ -45,33 +41,34 @@ function removeErrorMsg(el) {
 	$('.errormsg').hide();
 };
 
+
 $('#submit').click(function submitOrder() {
+	if (!isFormValid('name')) {
+		errorMsg('name');
+		return;
+	} else {
+		removeErrorMsg('name');
+	};
+
+	if (!isFormValid('email')) {
+		errorMsg('email');
+		return;
+	} else {
+		removeErrorMsg('email');
+	};
+
+	if (!isFormValid('message')) {
+		errorMsg('message');
+		return;
+	} else {
+		removeErrorMsg('message');
+	};
+
 
 	order.name = $('#name').val();
 	order.email = $('#email').val();
 	order.message = $('#message').val();
 
-	console.log(order);
-
-	isFormValid('name');
-	isFormValid('email');
-	isFormValid('message');
-
-	if (valid.name == false) {
-		errorMsg('name');
-	} else {
-		removeErrorMsg('name');
-	};
-	if (valid.email == false) {
-	errorMsg('email');
-	} else {
-		removeErrorMsg('email');
-	};
-	if (valid.message == false) {
-		errorMsg('message');
-	} else {
-		removeErrorMsg('message');
-	};
 });
 
 
