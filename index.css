@@ -249,3 +249,11 @@ figure:hover+span {
 .errormsg {
 	display:none;
 }
+
+.quoteMark {
+	float: left;
+}
+
+.rAlign {
+	text-align: right;
+}
