@@ -4,14 +4,6 @@ var order = {
 		message: null
 	};
 
-function isRequired(el) {
-	if ($('#' + el).prop('required')) {
-		return true;
-	} else {
-		return false;
-	};
-};
-
 function isEmpty(el) {
 	if (!$('#' + el).val()) {
 		return true;
@@ -20,54 +12,42 @@ function isEmpty(el) {
 	};
 };
 
-function isFormValid(obj) {
-		if (isRequired(obj)) {
-			if(!isEmpty(obj)){
-				return true;
-			};
-		} else {
-			return true;
-		};
-		return false;
+function isFieldValid(el) {
+	if (isEmpty(el)) {
+		$("#" + el + "Err").show();
+	} else {
+		$("#" + el + "Err").hide();
+	};
 };
 
-function errorMsg(el) {
-	$("#" + el + "Err").show();
-	$('.errormsg').show();
+function assignValue(item){
+	if (!isEmpty(item)) {
+		order[item] = $('#' + item).val();
+	};
 };
 
-function removeErrorMsg(el) {
-	$("#" + el + "Err").hide();
-	$('.errormsg').hide();
-};
+var name = document.getElementById('name');
+var email = document.getElementById('email');
+var message = document.getElementById('message');
 
+function isFormValid(name, email, message) {
+	if(!isEmpty(name)) {
+		isFieldValid(name);
+		assignValue(name);
+	};
+};
 
 $('#submit').click(function submitOrder() {
-	if (!isFormValid('name')) {
-		errorMsg('name');
-		return;
-	} else {
-		removeErrorMsg('name');
-	};
-
-	if (!isFormValid('email')) {
-		errorMsg('email');
-		return;
-	} else {
-		removeErrorMsg('email');
-	};
-
-	if (!isFormValid('message')) {
-		errorMsg('message');
-		return;
-	} else {
-		removeErrorMsg('message');
-	};
+	
+	isFieldValid('name');
+	isFieldValid('message');
+	isFieldValid('email');
 
 
-	order.name = $('#name').val();
-	order.email = $('#email').val();
-	order.message = $('#message').val();
+	assignValue('name');
+	assignValue('email');
+	assignValue('message');
+
 
 });
 
